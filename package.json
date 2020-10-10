@@ -12,7 +12,6 @@
     "sass": "^1.26.11"
   },
   "dependencies": {
-    "gsap": "^3.5.1",
-    "imagesloaded": "^4.1.4"
+    "gsap": "^3.5.1"
   }
 }

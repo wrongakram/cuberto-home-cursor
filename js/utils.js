@@ -12,7 +12,7 @@ const getMousePos = (e) => {
   }
   return { x: posx, y: posy };
 };
-
+// Get sibilings
 const getSiblings = (e) => {
   // for collecting siblings
   let siblings = [];
