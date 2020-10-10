@@ -1,0 +1,113 @@
+.hero {
+  background: #fff;
+  transition: 1s ease;
+  .container {
+    @media (min-width: 360px) {
+      padding: 0 30px;
+    }
+    @media (min-width: 768px) {
+      padding: 0 100px;
+    }
+    @media (min-width: 1024px) {
+      padding: 0 120px;
+    }
+    @media (min-width: 1200px) {
+      padding: 0 150px;
+    }
+    @media (min-width: 1350px) {
+      padding: 0 180px;
+    }
+    @media (min-width: 1600px) {
+      padding: 0 220px;
+    }
+    @media (min-width: 1800px) {
+      padding: 0 270px;
+    }
+
+    .hero-inner {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-self: center;
+
+      .hero-inner-col {
+        &.left {
+          display: none;
+        }
+        &.right {
+        }
+        .hero-inner-title {
+          z-index: 11;
+          position: relative;
+          h1 {
+            margin: 0;
+
+            font-weight: 400;
+            @media (min-width: 1800px) {
+              font-size: 28px;
+            }
+          }
+        }
+        .hero-inner-links {
+          z-index: 11;
+          position: relative;
+          display: flex;
+          .hero-inner-link-item {
+            .hero-inner-link-item-padding {
+              position: relative;
+              &:before {
+                content: "";
+                display: block;
+                position: absolute;
+                top: -30vh;
+                bottom: -30vh;
+                left: 0;
+                right: 0;
+              }
+            }
+            a {
+              padding: 12px 22px;
+              display: inline-block;
+              position: relative;
+              overflow: hidden;
+              text-decoration: none;
+              color: transparent;
+              transition: color 0.3s, -webkit-text-stroke 0.3s;
+              -webkit-text-stroke: 1px #000;
+              &:hover {
+                color: black;
+                -webkit-text-stroke: 1px transparent;
+              }
+              span {
+                line-height: 1.1;
+                font-weight: 700;
+                text-shadow: none;
+                font-size: 5.8vw;
+              }
+            }
+            &:first-child {
+              a {
+                padding-left: 0;
+              }
+            }
+            &:last-child {
+              a {
+                padding-right: 0;
+              }
+            }
+          }
+        }
+      }
+    }
+    .hero-inner-footer {
+      .hero-inner-footer-text {
+        p {
+          font-size: 2.8rem;
+          margin-top: -90px;
+          width: 70%;
+          line-height: 4.4rem;
+        }
+      }
+    }
+  }
+}

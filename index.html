@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cool Cursor</title>
+    <link rel="stylesheet" href="./sass/styles.scss" />
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <div class="header-inner">
+        <div class="header-inner-col left">
+          <div class="header-inner-logo">
+            <h2>cursorto</h2>
+          </div>
+        </div>
+        <div class="header-inner-col right">
+          <div class="header-inner-nav">
+            <span class="header-inner-nav-link">showreel</span>
+            <div class="header-inner-nav-menu">
+              <span class="header-inner-nav-link">menu</span>
+              <div class="header-inner-nav-menu-hamburger">
+                <span></span>
+                <span></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section class="hero">
+      <div class="container">
+        <div class="hero-inner">
+          <div class="hero-inner-banner">
+            <div class="hero-inner-col left"></div>
+            <div class="hero-inner-col right">
+              <div class="hero-inner-title">
+                <h1>We make it happen</h1>
+              </div>
+              <div class="hero-inner-links">
+                <div data-video-src="websites" class="hero-inner-link-item">
+                  <div class="hero-inner-link-item-padding"></div>
+                  <a href="/"> <span>Websites</span></a>
+                </div>
+
+                <div data-video-src="apps" class="hero-inner-link-item">
+                  <div class="hero-inner-link-item-padding"></div>
+                  <a href="/"> <span>Apps</span></a>
+                </div>
+                <div class="hero-inner-link-item" data-video-src="branding">
+                  <div class="hero-inner-link-item-padding"></div>
+                  <a href="/"> <span>Branding</span></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="hero-inner-footer">
+          <div class="hero-inner-footer-text">
+            <p>
+              Leading digital agency with solid design and development
+              expertise. We build readymade websites, mobile applications, and
+              elaborate online business services.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Chat -->
+    <div class="chat">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 30" id="chat">
+        <path
+          d="M16 26c8.84 0 16-5.82 16-13S24.84 0 16 0 0 5.82 0 13a11.72 11.72 0 004.12 8.71L3.33 30l7.53-4.69A19.11 19.11 0 0016 26z"
+        ></path>
+      </svg>
+    </div>
+
+    <!-- Cursor -->
+    <div class="cursor">
+      <div class="cursor-media">
+        <video
+          src="videos/websites.mp4"
+          preload="auto"
+          autoplay
+          muted
+          loop
+          id="websites"
+        ></video>
+        <video
+          src="videos/apps.mp4"
+          preload="auto"
+          autoplay
+          muted
+          loop
+          id="apps"
+        ></video>
+        <video
+          src="videos/branding.mp4"
+          preload="auto"
+          autoplay
+          muted
+          loop
+          id="branding"
+        ></video>
+      </div>
+    </div>
+  </body>
+  <script src="js/index.js"></script>
+</html>
