@@ -224,6 +224,10 @@ body {
   font-size: 16px;
 }
 
+.loading {
+  visibility: hidden;
+}
+
 .chat {
   position: fixed;
   bottom: 48px;

@@ -5766,8 +5766,12 @@ var _gsap = require("gsap");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+var body = document.querySelector("body");
+
 window.onload = function () {
-  _gsap.gsap.from(document.querySelector("body"), {
+  body.classList.remove("loading");
+
+  _gsap.gsap.from(body, {
     opacity: 0,
     duration: 1,
     ease: "Power3.easeInOut"
@@ -5803,7 +5807,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49834" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50834" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
