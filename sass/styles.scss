@@ -1,5 +1,4 @@
 @import "./components/header.scss";
-@import "./components/cursor.scss";
 @import "./components/hero.scss";
 
 *,
@@ -18,10 +17,6 @@ body {
   color: #000;
   background: #fff;
   font-size: 16px;
-}
-
-.loading {
-  visibility: hidden;
 }
 
 .chat {
