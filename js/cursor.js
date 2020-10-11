@@ -101,7 +101,6 @@ export default class Cursor {
     // lerp
     for (const key in this.cursorConfigs) {
       // key will be x & y
-
       // WTF IS LERP?
       // Lerp - A lerp returns the value between two numbers at a specified, decimal midpoint:
       this.cursorConfigs[key].previous = lerp(

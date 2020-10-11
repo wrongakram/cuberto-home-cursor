@@ -5,9 +5,6 @@
   z-index: 10;
   contain: layout style size;
   pointer-events: none;
-  will-change: transform;
-  transition: opacity 0.3s, color 0.4s;
-  width: 800px;
   &.media-blend {
     z-index: 100;
     mix-blend-mode: exclusion;
@@ -26,13 +23,7 @@
     transform: scale(0.2);
     background: black;
     border-radius: 50%;
-    transition: opacity 0.1s, -webkit-transform 0.3s ease-in-out;
-    transition: transform 0.3s ease-in-out, opacity 0.1s;
-    transition: transform 0.3s ease-in-out, opacity 0.1s,
-      -webkit-transform 0.3s ease-in-out, -moz-transform 0.3s ease-in-out,
-      -o-transform 0.3s ease-in-out;
   }
-
   .cursor-media {
     display: block;
     height: 350px;

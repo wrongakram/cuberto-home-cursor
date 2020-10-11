@@ -5561,7 +5561,8 @@ var getMousePos = function getMousePos(e) {
     x: posx,
     y: posy
   };
-};
+}; // Get sibilings
+
 
 exports.getMousePos = getMousePos;
 
@@ -5807,7 +5808,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50834" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53727" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
