@@ -5614,7 +5614,7 @@ var mouse = {
 };
 window.addEventListener("mousemove", function (ev) {
   return mouse = (0, _utils.getMousePos)(ev);
-}); // Custom Cursor Class
+});
 
 var Cursor = /*#__PURE__*/function () {
   function Cursor(el) {
@@ -5639,7 +5639,7 @@ var Cursor = /*#__PURE__*/function () {
         current: 0,
         amt: 0.2
       }
-    }; //
+    };
 
     this.onMouseMoveEv = function () {
       _this.cursorConfigs.x.previous = _this.cursorConfigs.x.current = mouse.x;
@@ -5660,9 +5660,53 @@ var Cursor = /*#__PURE__*/function () {
       }); // Clean up function
 
       window.removeEventListener("mousemove", _this.onMouseMoveEv);
-    };
+    }; // Scale cursor animation
 
-    this.setVideo = function (el) {
+
+    window.addEventListener("mousemove", this.onMouseMoveEv);
+  }
+
+  _createClass(Cursor, [{
+    key: "onScaleMouse",
+    value: function onScaleMouse() {
+      var _this2 = this;
+
+      // Loop through all items
+      this.Item.forEach(function (link) {
+        // If I am hovering on the item for on page load I want to scale the cursor media
+        if (link.matches(":hover")) {
+          _this2.setVideo(link);
+
+          _this2.ScaleCursor(_this2.Cursor.children[0], 0.8);
+        } //On mouse enter scale the media-cursor to .8
+
+
+        link.addEventListener("mouseenter", function () {
+          _this2.setVideo(link);
+
+          _this2.ScaleCursor(_this2.Cursor.children[0], 0.8);
+        }); //On mouse enter scale the media-cursor to 0
+
+        link.addEventListener("mouseleave", function () {
+          _this2.ScaleCursor(_this2.Cursor.children[0], 0);
+        }); //Hover on a tag to expand to 1.2
+
+        link.children[1].addEventListener("mouseenter", function () {
+          _this2.Cursor.classList.add("media-blend");
+
+          _this2.ScaleCursor(_this2.Cursor.children[0], 1.2);
+        }); // Bring scale back down .8
+
+        link.children[1].addEventListener("mouseleave", function () {
+          _this2.Cursor.classList.remove("media-blend");
+
+          _this2.ScaleCursor(_this2.Cursor.children[0], 0.8);
+        });
+      });
+    }
+  }, {
+    key: "setVideo",
+    value: function setVideo(el) {
       // Grab the data-video-src and make sure it matches the video that should be displayed
       var src = el.getAttribute("data-video-src");
       var video = document.querySelector("#".concat(src));
@@ -5681,59 +5725,20 @@ var Cursor = /*#__PURE__*/function () {
           });
         });
       }
-    };
-
-    this.onScaleMouse = function () {
-      // Loop through all items
-      _this.Item.forEach(function (link) {
-        // If I am hovering on the item for on page load I want to scale the cursor media
-        if (link.matches(":hover")) {
-          _this.setVideo(link);
-
-          _this.ScaleCursor(_this.Cursor.children[0], 0.8);
-        } //On mouse enter scale the media-cursor to .8
-
-
-        link.addEventListener("mouseenter", function () {
-          _this.setVideo(link);
-
-          _this.ScaleCursor(_this.Cursor.children[0], 0.8);
-        }); //On mouse enter scale the media-cursor to 0
-
-        link.addEventListener("mouseleave", function () {
-          _this.ScaleCursor(_this.Cursor.children[0], 0);
-        }); //Hover on a tag to expand to 1.2
-
-        link.children[1].addEventListener("mouseenter", function () {
-          _this.Cursor.classList.add("media-blend");
-
-          _this.ScaleCursor(_this.Cursor.children[0], 1.2);
-        }); // Bring scale back down .8
-
-        link.children[1].addEventListener("mouseleave", function () {
-          _this.Cursor.classList.remove("media-blend");
-
-          _this.ScaleCursor(_this.Cursor.children[0], 0.8);
-        });
-      });
-    }; // Scale cursor animation
-
-
-    this.ScaleCursor = function (el, amount) {
+    }
+  }, {
+    key: "ScaleCursor",
+    value: function ScaleCursor(el, amount) {
       _gsap.gsap.to(el, {
         duration: 0.6,
         scale: amount,
         ease: "Power3.easeOut"
       });
-    };
-
-    window.addEventListener("mousemove", this.onMouseMoveEv);
-  }
-
-  _createClass(Cursor, [{
+    }
+  }, {
     key: "render",
     value: function render() {
-      var _this2 = this;
+      var _this3 = this;
 
       this.cursorConfigs.x.current = mouse.x;
       this.cursorConfigs.y.current = mouse.y; // lerp
@@ -5749,7 +5754,7 @@ var Cursor = /*#__PURE__*/function () {
       this.Cursor.style.transform = "translateX(".concat(this.cursorConfigs.x.previous, "px) translateY(").concat(this.cursorConfigs.y.previous, "px)"); // RAF
 
       requestAnimationFrame(function () {
-        return _this2.render();
+        return _this3.render();
       });
     }
   }]);
@@ -5808,7 +5813,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53727" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54600" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
